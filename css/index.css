@@ -64,10 +64,16 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Copy and paste your work from yesterday here and start to refactor into flexbox */
+hr { border: solid 1px black; }
+
 .container { margin: 2rem 8rem; }
 
 @media (max-width: 800px) {
   .container { margin: 2rem; }
+}
+
+@media (max-width: 500px) {
+  .container { margin: 0 2rem; }
 }
 
 header {
@@ -194,6 +200,15 @@ section .row {
 }
 
 section .row .component { margin-right: 2rem; }
+
+@media (max-width: 500px) {
+  section .row {
+    flex-direction: column;
+  }
+
+  section .row .component { margin: 0 0 3rem 0; }
+}
+
 
 section .row .banner,
 section .row .banner .middle-img {
