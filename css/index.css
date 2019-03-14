@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -12,8 +12,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -24,7 +24,7 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
@@ -76,6 +76,12 @@ header {
   position: -webkit-sticky;
 }
 
+@media (max-width: 500px) {
+  header {
+    position: relative;
+  }
+}
+
 header nav {
   display: flex;
   flex-wrap: wrap;
@@ -92,12 +98,36 @@ header nav a:nth-of-type(-n+6) {
   text-decoration: none;
 }
 
+@media (max-width: 500px) {
+  header nav {
+    /* Reset header spacing */
+    margin: 0;
+    padding: 0;
+    /* Make nav items flow top-to-bottom */
+    flex-direction: column;
+  }
+
+  header nav a {
+    font-size: 1.5rem;
+    width: 100vw;
+    padding: 1.25rem 0;
+    text-align: center;
+    border-bottom: solid 1px black;
+  }
+}
+
 @media (max-width: 800px) {
   header nav .link.logo {
     flex: 1 0 100%;       /* puts this element on it's own line, taking up entire remaining width */
     order: -1;            /* set as the first item in the navbar */
     margin-bottom: 3rem;
     text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  header nav .link.logo {
+    margin: 0;
   }
 }
 
