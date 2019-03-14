@@ -90,10 +90,12 @@ header nav a:nth-of-type(-n+6) {
 
 section { margin: 2rem 0 2rem 0; }
 
+section.landing { margin: 4rem 0; }
+
 section.landing .cols {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
   align-content: center;
 }
@@ -103,7 +105,11 @@ section.landing .cols .col {
   margin-bottom: 2rem;
 }
 
-section.landing .title { font-size: 6rem; }
+section.landing .cols .col.left {
+  margin-right: 12rem;
+}
+
+section.landing .title { font-size: 5rem; }
 
 section.landing .cta,
 button.styled {
