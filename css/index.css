@@ -66,6 +66,10 @@ h1, h2, h3, h4, h5 {
 /* Copy and paste your work from yesterday here and start to refactor into flexbox */
 .container { margin: 2rem 8rem; }
 
+@media (max-width: 800px) {
+  .container { margin: 2rem; }
+}
+
 header {
   top: 0;
   position: sticky;
@@ -88,6 +92,15 @@ header nav a:nth-of-type(-n+6) {
   text-decoration: none;
 }
 
+@media (max-width: 800px) {
+  header nav .link.logo {
+    flex: 1 0 100%;       /* puts this element on it's own line, taking up entire remaining width */
+    order: -1;            /* set as the first item in the navbar */
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+}
+
 section { margin: 2rem 0 2rem 0; }
 
 section.landing { margin: 4rem 0; }
@@ -100,13 +113,31 @@ section.landing .cols {
   align-content: center;
 }
 
+@media (max-width: 1150px) {
+  section.landing .cols {
+    flex-wrap: nowrap;        /* ensures title text and header image do not wrap */
+    justify-content: center;
+  }
+}
+
 section.landing .cols .col {
   text-align: center;
   margin-bottom: 2rem;
 }
 
+@media (max-width: 800px) {
+  section.landing .cols .col.left { padding: 4rem 0; }  /* give extra spacing around title text */
+  section.landing .cols .col.right { display: none; }   /* hide header image below 800px */
+}
+
 section.landing .cols .col.left {
   margin-right: 12rem;
+}
+
+@media (max-width: 1150px) {
+  section.landing .cols .col.left {
+    margin: 0;
+  }
 }
 
 section.landing .title { font-size: 5rem; }
